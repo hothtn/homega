@@ -91,7 +91,7 @@
         }
 
         .about-homega-section .content-grid {
-            display: grid;
+            display: grid; /* Mặc định là grid cho desktop */
             grid-template-columns: 1fr 1fr; /* 2 cột trên desktop */
             gap: 40px;
             align-items: center;
@@ -324,19 +324,16 @@
         }
 
         /* Responsive Adjustments */
-        @media (max-width: 992px) {
+        @media (max-width: 992px) { /* Breakpoint cho tablet (lớn hơn mobile) */
             .content-grid {
                 grid-template-columns: 1fr; /* Một cột trên tablet */
                 gap: 30px;
-            }
-
-            .content-column-image .image-wrapper {
-                justify-content: center; /* Căn giữa ảnh trong cột hình ảnh */
+                /* Bỏ display: flex và flex-direction ở đây để không xung đột với media query 768px */
             }
 
             .content-column-text h2,
             .content-column-text p {
-                text-align: center; /* Căn giữa text trên mobile/tablet */
+                text-align: center; /* Căn giữa text trên tablet */
             }
 
             .features-list-grid {
@@ -345,7 +342,34 @@
             }
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 768px) { /* Breakpoint chính cho mobile */
+            .content-grid {
+                display: flex; /* Chuyển sang Flexbox để kiểm soát thứ tự */
+                flex-direction: column; /* Xếp chồng các phần tử theo cột */
+                align-items: center; /* Căn giữa theo chiều ngang */
+                gap: 30px;
+            }
+
+            .column.content-column-image {
+                order: 2; /* Đặt cột ảnh xuống dưới (thứ tự 2) */
+                padding: 10px; /* Giảm padding cho ảnh trên mobile */
+            }
+
+            .column.content-column-text {
+                order: 1; /* Đặt cột văn bản lên trên (thứ tự 1) */
+                padding: 10px; /* Giảm padding cho văn bản trên mobile */
+            }
+
+            .content-column-image .image-wrapper img {
+                max-width: 250px; /* Giảm kích thước tối đa của ảnh logo trên mobile */
+            }
+
+            .content-column-text h2,
+            .content-column-text p {
+                text-align: center; /* Đảm bảo văn bản căn giữa */
+            }
+
+            /* Các điều chỉnh khác cho mobile */
             .section-title {
                 font-size: 1.8em;
             }
@@ -354,8 +378,14 @@
                 font-size: 1em;
             }
 
+            .product-grid {
+                grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Giảm minmax cho ảnh sản phẩm trên mobile */
+                gap: 20px;
+            }
+
             .features-list-grid {
-                grid-template-columns: 1fr; /* Một cột trên mobile */
+                grid-template-columns: 1fr; /* Một cột cho các tính năng trên mobile */
+                gap: 25px; /* Giảm khoảng cách */
             }
 
             .btn.contact-btn {
@@ -363,13 +393,13 @@
                 font-size: 1em;
             }
             .contact-cta-section .contact-text-line {
-                 font-size: 0.9em; /* Nhỏ hơn trên mobile */
+                 font-size: 0.9em;
                  margin-bottom: 20px;
             }
             .btn.contact-btn .icon-email {
                 font-size: 18px;
             }
-             .btn.contact-btn .button-text {
+            .btn.contact-btn .button-text {
                 font-size: 0.8em;
                 bottom: -25px;
             }
@@ -378,9 +408,9 @@
             }
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 480px) { /* Mobile nhỏ hơn nữa */
             .section {
-                padding: 60px 15px;
+                padding: 40px 15px; /* Giảm padding tổng thể */
             }
 
             .section-title {
