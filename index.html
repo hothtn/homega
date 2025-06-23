@@ -13,8 +13,9 @@
         :root {
             --primary-dark: #001f3f; /* Dark Blue from hothanhtuan.com */
             --accent-gold: #ffc300; /* Gold/Orange accent from hothanhtuan.com */
-            --homega-green: #01978e; /* Green from Homega's button */
-            --main-background-color: #CAA348; /* Màu nền chính mới */
+            --homega-green: #01978e; /* Green from Homega's button (still used for button) */
+            --main-background-color: #F8F8F8; /* MÀU NỀN CHÍNH MỚI: Trắng ngà / Xám siêu nhạt */
+            --section-background-white: #FFFFFF; /* MÀU NỀN TRẮNG cho các section cụ thể */
             --text-color-dark: #2c3e50; /* Darker text for readability */
             --text-color-light: #666; /* Lighter text for paragraphs */
             --white: #ffffff;
@@ -31,7 +32,7 @@
             font-family: 'Roboto', sans-serif; /* Dễ đọc, hiện đại */
             line-height: 1.6;
             color: var(--text-color-dark);
-            background-color: var(--main-background-color); /* Áp dụng màu nền chính */
+            background-color: var(--main-background-color); /* Áp dụng màu nền chính mới */
             -webkit-font-smoothing: antialiased;
             scroll-behavior: smooth;
         }
@@ -79,7 +80,7 @@
 
         /* About Homega Section */
         .about-homega-section {
-            background-color: var(--white); /* Đặt lại màu nền trắng cho section này */
+            background-color: var(--section-background-white); /* MÀU NỀN MỚI: Trắng tinh */
             padding-top: 80px; /* Giữ padding như gốc */
             padding-bottom: 0; /* Giữ padding như gốc */
         }
@@ -133,7 +134,7 @@
 
         /* Product Showcase Section */
         .product-showcase-section {
-            background-color: var(--white); /* Đặt lại màu nền trắng cho section này */
+            background-color: var(--section-background-white); /* MÀU NỀN MỚI: Trắng tinh */
             padding-top: 0; /* Giữ padding như gốc */
             padding-bottom: 80px; /* Giữ padding như gốc */
         }
@@ -160,7 +161,7 @@
 
         /* Why ATECH Section */
         .why-atech-section {
-            background-color: var(--homega-green); /* Màu xanh lá từ nút của Homega.vn */
+            background-color: var(--primary-dark); /* MÀU NỀN MỚI: Xanh Navy đậm */
             color: var(--white);
             padding-top: 80px;
             padding-bottom: 40px; /* Giữ padding như gốc */
@@ -216,7 +217,7 @@
 
         /* Contact CTA Section */
         .contact-cta-section {
-            background-color: var(--primary-dark); /* Màu nền solid mới */
+            background-color: var(--primary-dark); /* MÀU NỀN MỚI: Xanh Navy đậm */
             padding-top: 80px;
             padding-bottom: 80px;
             position: relative;
@@ -247,7 +248,7 @@
             margin-bottom: 30px; /* Khoảng cách với nút */
             text-align: center;
             line-height: 1.4;
-            max-width: 750px; /* Mở rộng chiều rộng để vừa trên 1 dòng nếu có thể */
+            max-width: 750px; /* Giới hạn chiều rộng để giữ trên 1 dòng nếu có thể */
             white-space: normal; /* Cho phép xuống dòng nếu quá dài */
             display: block; /* Đảm bảo nó là một khối riêng */
         }
@@ -344,16 +345,16 @@
                 grid-template-columns: 1fr; /* Một cột trên mobile */
             }
 
-            .contact-cta-section .contact-text-line {
-                 font-size: 0.9em; /* Nhỏ hơn trên mobile */
-                 margin-bottom: 20px;
-            }
             .btn.contact-btn {
                 padding: 15px 30px;
                 font-size: 1em;
             }
+            .contact-cta-section .contact-text-line {
+                 font-size: 0.9em; /* Nhỏ hơn trên mobile */
+                 margin-bottom: 20px;
+            }
             .btn.contact-btn .icon-email {
-                font-size: 20px;
+                font-size: 18px;
             }
              .btn.contact-btn .button-text {
                 font-size: 0.8em;
@@ -378,7 +379,7 @@
                 font-size: 0.9em;
             }
             .btn.contact-btn .icon-email {
-                font-size: 18px;
+                font-size: 16px;
             }
             .contact-cta-section .contact-text-line {
                  font-size: 0.8em;
