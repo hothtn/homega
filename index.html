@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <title>Homega Company</title><!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
     <title>Homega Company</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -138,9 +143,6 @@
             padding-bottom: 80px; /* Giữ padding như gốc */
         }
 
-        /* Đã loại bỏ .product-showcase-section .section-title ở đây */
-        /* vì bạn muốn bỏ chữ "Sản phẩm nổi bật của ATECH" */
-
         .product-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* 4 cột trên desktop */
@@ -181,8 +183,8 @@
 
         .features-list-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Điều chỉnh để có 2 cột trên màn hình lớn */
-            gap: 40px; /* Tăng khoảng cách giữa các cột */
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); /* 2 cột trên desktop */
+            gap: 40px 60px; /* Tăng khoảng cách giữa các cột và hàng */
             margin-top: 40px;
         }
 
@@ -190,7 +192,7 @@
             background-color: rgba(255, 255, 255, 0.1); /* Nền mờ cho từng item */
             padding: 30px;
             border-radius: 10px;
-            text-align: left;
+            text-align: center; /* Căn giữa toàn bộ nội dung item */
             box-shadow: 0 5px 15px rgba(0,0,0,0.15);
         }
 
@@ -199,20 +201,22 @@
             color: var(--accent-gold); /* Icon màu vàng */
             margin-bottom: 20px;
             display: block;
+            margin-left: auto; /* Căn giữa icon */
+            margin-right: auto;
         }
 
         .feature-item h3 {
             color: var(--white);
             font-size: 1.6em;
             margin-bottom: 10px;
-            text-align: left;
+            text-align: center; /* Căn giữa tiêu đề */
         }
 
         .feature-item p {
             color: rgba(255, 255, 255, 0.85);
             font-size: 1em;
             margin: 0;
-            text-align: left;
+            text-align: center; /* Căn giữa đoạn văn */
         }
 
         /* Contact CTA Section */
@@ -222,6 +226,10 @@
             padding-bottom: 80px;
             position: relative;
             color: var(--white);
+            display: flex; /* Dùng flexbox để căn giữa nội dung */
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; /* Sắp xếp nội dung theo cột */
         }
 
         .contact-cta-section::before {
@@ -238,64 +246,51 @@
         .contact-cta-section .container {
             position: relative;
             z-index: 2;
+            padding-top: 0; /* Bỏ padding mặc định của container */
+            padding-bottom: 0;
         }
 
-        .contact-heading {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.4em; /* Nhỏ hơn, thanh lịch hơn */
-            font-weight: 500; /* Giảm độ đậm */
-            color: var(--white);
-            margin-bottom: 30px; /* Giảm khoảng cách dưới */
-            text-align: center;
-            max-width: 600px; /* Giới hạn chiều rộng để chữ không quá dài */
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .button-group {
+        /* Bỏ .contact-heading (tiêu đề đã bị loại bỏ) */
+        .contact-cta-section .button-group {
             display: flex;
             justify-content: center;
             gap: 20px;
+            margin-top: 0; /* Đảm bảo không có khoảng cách thừa từ tiêu đề cũ */
         }
 
         .btn.contact-btn {
             background-color: var(--homega-green); /* Nút liên hệ màu xanh lá từ gốc */
             color: var(--white);
-            padding: 15px 35px; /* Giảm padding một chút cho thanh lịch */
+            padding: 18px 45px; /* Kích thước nút lớn hơn, rõ ràng hơn */
             border-radius: 50px; /* Bo tròn hết cỡ */
-            font-size: 1em; /* Giảm kích thước font */
+            font-size: 1.2em; /* Font lớn hơn */
             font-weight: 600;
             text-transform: uppercase;
+            letter-spacing: 0.5px; /* Thêm chút khoảng cách chữ cho thanh lịch */
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Đổ bóng nhẹ cho nút */
         }
 
         .btn.contact-btn:hover {
             background-color: #005954; /* Màu tối hơn khi hover */
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+            transform: translateY(-3px); /* Hiệu ứng nhấc nhẹ khi hover */
         }
 
         .btn.contact-btn .icon-svg {
-            width: 18px; /* Kích thước icon SVG */
-            height: 18px;
+            width: 22px; /* Kích thước icon SVG lớn hơn */
+            height: 22px;
             fill: currentColor; /* Icon kế thừa màu chữ */
-            margin-right: 8px; /* Giảm khoảng cách */
+            margin-right: 12px; /* Khoảng cách lớn hơn */
             vertical-align: middle;
         }
 
-        /* Footer */
+        /* Footer (đã bỏ) */
         .site-footer {
-            background-color: var(--primary-dark); /* Màu tối của hothanhtuan.com */
-            color: rgba(255, 255, 255, 0.7);
-            padding: 30px 20px;
-            text-align: center;
-            font-size: 0.9em;
-        }
-
-        .site-footer .container {
-            padding: 0;
+            display: none; /* Ẩn hoàn toàn footer */
         }
 
         /* Responsive Adjustments */
@@ -312,15 +307,10 @@
 
             .features-list-grid {
                 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Vẫn 2 cột nếu đủ chỗ, co lại nếu không */
+                gap: 30px; /* Giảm khoảng cách cho tablet */
             }
 
-            .feature-item h3,
-            .feature-item p,
-            .feature-item .icon {
-                text-align: center; /* Căn giữa icon và text trên mobile/tablet */
-                margin-left: auto;
-                margin-right: auto;
-            }
+            /* .feature-item h3, .feature-item p, .feature-item .icon đã được căn giữa ở trên */
         }
 
         @media (max-width: 768px) {
@@ -337,12 +327,8 @@
             }
 
             .btn.contact-btn {
-                padding: 12px 25px;
-                font-size: 0.9em;
-            }
-
-            .contact-heading {
-                font-size: 1.2em;
+                padding: 15px 30px;
+                font-size: 1em;
             }
         }
 
@@ -354,9 +340,15 @@
             .section-title {
                 font-size: 1.5em;
             }
-
-            .contact-heading {
-                font-size: 1em;
+            
+            .btn.contact-btn {
+                padding: 12px 25px;
+                font-size: 0.9em;
+            }
+            .btn.contact-btn .icon-svg {
+                width: 18px; 
+                height: 18px;
+                margin-right: 8px;
             }
         }
     </style>
@@ -429,7 +421,6 @@
 
         <section class="section contact-cta-section">
             <div class="container contact-container">
-                <h4 class="contact-heading">Nếu cần thêm thông tin hoặc tư vấn sản phẩm, xin vui lòng liên hệ với chúng tôi</h4>
                 <div class="button-group">
                     <a href="mailto:info@homega.vn" target="_blank" class="btn contact-btn">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1800" class="icon-svg"><path d="M531.087,344.727c0.247,0,0.492,0.033,0.739,0.033h453.558c16.819,0,30.444-13.625,30.444-30.436 c0-16.815-13.625-30.435-30.444-30.435H638.226H531.826c-16.811,0-30.44,13.62-30.44,30.435 C501.386,330.885,514.624,344.331,531.087,344.727z"></path><path d="M531.826,497.389h749.422c16.814,0,30.443-13.629,30.443-30.439c0-16.814-13.629-30.439-30.443-30.439 H531.826c-16.811,0-30.44,13.625-30.44,30.439C501.386,483.76,515.016,497.389,531.826,497.389z"></path><path d="M531.826,650.009h749.422c16.814,0,30.443-13.633,30.443-30.444c0-8.872-3.822-16.827-9.877-22.389 c-5.424-4.982-12.625-8.046-20.566-8.046H531.826c-7.938,0-15.143,3.064-20.567,8.046c-6.054,5.562-9.873,13.517-9.873,22.389 C501.386,636.376,515.016,650.009,531.826,650.009z"></path><path d="M1311.691,772.194c0-16.806-13.629-30.436-30.443-30.436H531.826c-16.811,0-30.44,13.629-30.44,30.436 c0,16.815,13.629,30.444,30.44,30.444h749.422C1298.063,802.638,1311.691,789.009,1311.691,772.194z"></path><path d="M1772.088,533.511c-2.481-3.422-5.691-6.4-9.603-8.622l-246.454-139.961v-82.389v-9.853 c-1.264-7.738-5.432-14.501-11.406-19.066l-49.465-42.835l-131.073-113.508l-61.889-53.596c-5.286-4.582-11.866-7.021-18.591-7.275 h-2.197H937.55h-66.904H383.746c-47.809,0-86.705,38.895-86.705,86.696V382.15L61.554,515.893 c-31.678,11.565-54.396,41.913-54.396,77.54v1067.543c0,45.554,37.064,82.618,82.622,82.618h1625.598 c45.558,0,82.623-37.064,82.623-82.618V593.433C1798,569.839,1788.002,548.583,1772.088,533.511z M1614.426,510.814l92.579,52.583 l-11.661,8.301l-179.313,127.664V571.698v-60.883v-55.873L1614.426,510.814z M1405.5,267.454h-132.895V152.361L1405.5,267.454z M357.922,571.698v-60.883v-93.226v-70.01V143.102c0-14.239,11.585-25.825,25.824-25.825h379.699H886.73h34.734h123.285h167.617 v180.296c0,16.631,13.483,30.11,30.119,30.11h212.674v22.668v70.015v90.448v60.883V742.7l-397.298,282.87l-50.781,36.148 l-18.591,13.241l-81.088,57.728l-81.093-57.728l-18.611-13.25l-50.782-36.155L357.922,741.483V571.698z M193.76,510.814 l103.281-58.649v58.649v60.883V698.14L119.448,571.698l-14.597-10.395L193.76,510.814z M68.036,1648.984V609.822l229.005,163.047 l60.88,43.344L710.7,1067.38l-8.372,7.58l-67.267,60.871L68.036,1648.984z M121.495,1682.723l604.294-546.892l35.693-32.304 l45.37,32.304l82.897,59.028c5.283,3.76,11.462,5.637,17.653,5.637c6.187,0,12.369-1.877,17.652-5.637l82.889-59.028l45.354-32.286 l35.686,32.286l604.311,546.892H121.495z M1737.119,1640.271l-557.41-504.439l-67.267-60.871l-8.359-7.563l351.077-249.962 l60.871-43.348l221.088-157.407V1640.271z"></path></svg>
@@ -439,11 +430,420 @@
             </div>
         </section>
     </main>
-
-    <footer class="site-footer">
-        <div class="container">
-            <p>&copy; 2024 Homega. All rights reserved.</p>
-        </div>
-    </footer>
-</body>
+    </body>
 </html>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom Colors based on hothanhtuan.com and Homega.vn elements */
+        :root {
+            --primary-dark: #001f3f; /* Dark Blue from hothanhtuan.com */
+            --accent-gold: #ffc300; /* Gold/Orange accent from hothanhtuan.com */
+            --homega-green: #01978e; /* Green from Homega's button */
+            --light-grey-bg: #f4f4f4; /* Light background from Homega */
+            --text-color-dark: #2c3e50; /* Darker text for readability */
+            --text-color-light: #666; /* Lighter text for paragraphs */
+            --white: #ffffff;
+        }
+
+        /* Base styles and Typography */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif; /* Dễ đọc, hiện đại */
+            line-height: 1.6;
+            color: var(--text-color-dark);
+            background-color: var(--white);
+            -webkit-font-smoothing: antialiased;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px; /* Chiều rộng tương tự trang gốc */
+            margin: 0 auto;
+            padding: 20px 0; /* Padding mặc định */
+        }
+
+        /* Header (đã bỏ logo ở đây) */
+        .header {
+            display: none; /* Ẩn hoàn toàn header đầu tiên */
+        }
+
+        /* Main Content Section Styles */
+        .main-content {
+            padding-top: 0;
+        }
+
+        .section {
+            padding: 80px 20px; /* Padding đều cho các section */
+            text-align: center;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2em;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: var(--primary-dark);
+        }
+
+        .section-description {
+            font-size: 1.1em;
+            color: var(--text-color-light);
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+        }
+
+        .text-white {
+            color: var(--white) !important;
+        }
+
+        /* About Homega Section */
+        .about-homega-section {
+            background-color: var(--light-grey-bg);
+            padding-top: 80px; /* Giữ padding như gốc */
+            padding-bottom: 0; /* Giữ padding như gốc */
+        }
+
+        .about-homega-section .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* 2 cột trên desktop */
+            gap: 40px;
+            align-items: center;
+            text-align: left; /* Căn trái cho text trong cột */
+            max-width: 1100px; /* Giữ nguyên chiều rộng content gốc */
+            margin: 0 auto;
+        }
+
+        .content-column-image {
+            padding: 20px; /* Padding từ gốc */
+        }
+
+        .content-column-image .image-wrapper img {
+            max-width: 300px; /* Kích thước ảnh logo trong phần giới thiệu */
+            height: auto;
+            border-radius: 4px; /* Bo góc nhẹ hơn, viền chìm */
+            /* Bỏ box-shadow để viền chìm vào nền */
+            display: block;
+            margin: 0 auto; /* Căn giữa ảnh */
+        }
+
+        .content-column-text {
+            padding: 20px; /* Padding từ gốc */
+        }
+
+        .content-column-text h2 {
+            text-align: left; /* Tiêu đề cột căn trái */
+            font-size: 1.8em; /* H3 gốc */
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--primary-dark);
+        }
+
+        .content-column-text p {
+            text-align: left; /* Văn bản cột căn trái */
+            font-size: 1em;
+            color: var(--text-color-light);
+            margin-bottom: 15px;
+        }
+
+        .content-column-text p strong {
+            color: var(--primary-dark); /* Làm nổi bật chữ in đậm */
+            font-weight: 700;
+        }
+
+        /* Product Showcase Section */
+        .product-showcase-section {
+            background-color: var(--light-grey-bg);
+            padding-top: 0; /* Giữ padding như gốc */
+            padding-bottom: 80px; /* Giữ padding như gốc */
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* 4 cột trên desktop */
+            gap: 30px;
+            margin-top: 40px;
+            justify-items: center; /* Căn giữa các item trong grid */
+        }
+
+        .product-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .product-item img:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Why ATECH Section */
+        .why-atech-section {
+            background-color: var(--homega-green); /* Màu xanh lá từ nút của Homega.vn */
+            color: var(--white);
+            padding-top: 80px;
+            padding-bottom: 40px; /* Giữ padding như gốc */
+        }
+
+        .why-atech-section .section-title {
+            color: var(--white);
+            font-size: 2.5em; /* Lớn hơn */
+        }
+
+        .why-atech-section .section-description {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 60px;
+        }
+
+        .features-list-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); /* 2 cột trên desktop */
+            gap: 40px 60px; /* Tăng khoảng cách giữa các cột và hàng */
+            margin-top: 40px;
+        }
+
+        .feature-item {
+            background-color: rgba(255, 255, 255, 0.1); /* Nền mờ cho từng item */
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center; /* Căn giữa toàn bộ nội dung item */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+
+        .feature-item .icon {
+            font-size: 3em;
+            color: var(--accent-gold); /* Icon màu vàng */
+            margin-bottom: 20px;
+            display: block;
+            margin-left: auto; /* Căn giữa icon */
+            margin-right: auto;
+        }
+
+        .feature-item h3 {
+            color: var(--white);
+            font-size: 1.6em;
+            margin-bottom: 10px;
+            text-align: center; /* Căn giữa tiêu đề */
+        }
+
+        .feature-item p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1em;
+            margin: 0;
+            text-align: center; /* Căn giữa đoạn văn */
+        }
+
+        /* Contact CTA Section */
+        .contact-cta-section {
+            background: url('https://homega.vn/wp-content/uploads/2020/10/cover.png') no-repeat center bottom / cover; /* Ảnh nền từ trang gốc */
+            padding-top: 80px;
+            padding-bottom: 80px;
+            position: relative;
+            color: var(--white);
+            display: flex; /* Dùng flexbox để căn giữa nội dung */
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; /* Sắp xếp nội dung theo cột */
+        }
+
+        .contact-cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 31, 63, 0.8); /* Overlay đậm hơn cho phần liên hệ */
+            z-index: 1;
+        }
+
+        .contact-cta-section .container {
+            position: relative;
+            z-index: 2;
+            padding-top: 0; /* Bỏ padding mặc định của container */
+            padding-bottom: 0;
+        }
+
+        /* Bỏ .contact-heading (tiêu đề đã bị loại bỏ) */
+        .contact-cta-section .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 0; /* Đảm bảo không có khoảng cách thừa từ tiêu đề cũ */
+        }
+
+        .btn.contact-btn {
+            background-color: var(--homega-green); /* Nút liên hệ màu xanh lá từ gốc */
+            color: var(--white);
+            padding: 18px 45px; /* Kích thước nút lớn hơn, rõ ràng hơn */
+            border-radius: 50px; /* Bo tròn hết cỡ */
+            font-size: 1.2em; /* Font lớn hơn */
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px; /* Thêm chút khoảng cách chữ cho thanh lịch */
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Đổ bóng nhẹ cho nút */
+        }
+
+        .btn.contact-btn:hover {
+            background-color: #005954; /* Màu tối hơn khi hover */
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+            transform: translateY(-3px); /* Hiệu ứng nhấc nhẹ khi hover */
+        }
+
+        .btn.contact-btn .icon-svg {
+            width: 22px; /* Kích thước icon SVG lớn hơn */
+            height: 22px;
+            fill: currentColor; /* Icon kế thừa màu chữ */
+            margin-right: 12px; /* Khoảng cách lớn hơn */
+            vertical-align: middle;
+        }
+
+        /* Footer (đã bỏ) */
+        .site-footer {
+            display: none; /* Ẩn hoàn toàn footer */
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .content-grid {
+                grid-template-columns: 1fr; /* Một cột trên tablet */
+                gap: 30px;
+            }
+
+            .content-column-text h2,
+            .content-column-text p {
+                text-align: center; /* Căn giữa text trên mobile/tablet */
+            }
+
+            .features-list-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Vẫn 2 cột nếu đủ chỗ, co lại nếu không */
+                gap: 30px; /* Giảm khoảng cách cho tablet */
+            }
+
+            /* .feature-item h3, .feature-item p, .feature-item .icon đã được căn giữa ở trên */
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 1.8em;
+            }
+
+            .section-description {
+                font-size: 1em;
+            }
+
+            .features-list-grid {
+                grid-template-columns: 1fr; /* Một cột trên mobile */
+            }
+
+            .btn.contact-btn {
+                padding: 15px 30px;
+                font-size: 1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section {
+                padding: 60px 15px;
+            }
+
+            .section-title {
+                font-size: 1.5em;
+            }
+            
+            .btn.contact-btn {
+                padding: 12px 25px;
+                font-size: 0.9em;
+            }
+            .btn.contact-btn .icon-svg {
+                width: 18px; 
+                height: 18px;
+                margin-right: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main id="content" class="main-content">
+        <section class="section about-homega-section">
+            <div class="container content-grid">
+                <div class="column content-column-image">
+                    <figure class="image-wrapper">
+                        <img src="https://homega.vn/wp-content/uploads/2024/11/logo-01a-300x287.png" alt="Homega Logo">
+                    </figure>
+                </div>
+                <div class="column content-column-text">
+                    <h2>Công ty Cổ phần HOMEGA</h2>
+                    <p>là đơn vị chuyên nghiệp trong lĩnh vực phân phối sơn nước, mang đến giải pháp sơn chất lượng cao với nhãn hiệu **ATECH**. Với sứ mệnh góp phần xây dựng và bảo vệ không gian sống của mọi người, HOMEGA cam kết cung cấp các sản phẩm sơn có độ bền bỉ, an toàn, và đa dạng màu sắc.</p>
+                    <p>Được dẫn dắt bởi đội ngũ giàu kinh nghiệm và tâm huyết, chúng tôi không ngừng đổi mới và nâng cao chất lượng dịch vụ, luôn đặt uy tín và sự hài lòng của khách hàng lên hàng đầu.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section product-showcase-section">
+            <div class="container">
+                <div class="product-grid">
+                    <figure class="product-item">
+                        <img src="https://homega.vn/wp-content/uploads/2024/11/atech1.png" alt="ATECH Product 1">
+                    </figure>
+                    <figure class="product-item">
+                        <img src="https://homega.vn/wp-content/uploads/2024/11/atech2.png" alt="ATECH Product 2">
+                    </figure>
+                    <figure class="product-item">
+                        <img src="https://homega.vn/wp-content/uploads/2024/11/atech3.png" alt="ATECH Product 3">
+                    </figure>
+                    <figure class="product-item">
+                        <img src="https://homega.vn/wp-content/uploads/2024/11/atech4.png" alt="ATECH Product 4">
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="section why-atech-section">
+            <div class="container">
+                <h2 class="section-title text-white">Với **ATECH**</h2>
+                <p class="section-description text-white">Chúng tôi tự tin mang đến những giải pháp tối ưu cho mọi công trình, từ ngôi nhà nhỏ đến dự án lớn. Hãy cùng HOMEGA tạo nên những không gian sống ấn tượng, bền vững với thời gian.</p>
+
+                <div class="features-list-grid">
+                    <div class="feature-item">
+                        <i class="fas fa-cube icon"></i>
+                        <h3>Chất lượng sản phẩm</h3>
+                        <p>**ATECH** đáp ứng các tiêu chuẩn chất lượng cao, đảm bảo độ bền màu, chống thấm, và khả năng bảo vệ tối ưu. Chúng tôi cam kết mang đến những sản phẩm đáng tin cậy, giúp duy trì vẻ đẹp bền lâu cho mọi công trình.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fab fa-connectdevelop icon"></i>
+                        <h3>Đổi mới và phát triển</h3>
+                        <p>HOMEGA không ngừng nghiên cứu và áp dụng công nghệ tiên tiến để nâng cao chất lượng sản phẩm. Liên tục cập nhật xu hướng mới để mang đến các giải pháp sơn tường hiện đại, phù hợp với nhu cầu thị trường.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fab fa-servicestack icon"></i>
+                        <h3>Dịch vụ khách hàng tận tâm</h3>
+                        <p>Đội ngũ HOMEGA luôn sẵn sàng hỗ trợ và tư vấn chi tiết, từ việc chọn màu sắc phù hợp đến giải đáp mọi thắc mắc kỹ thuật, đảm bảo khách hàng có trải nghiệm tốt nhất trong suốt quá trình sử dụng sản phẩm.</p>
+                    </div>
+                     <div class="feature-item">
+                        <i class="fas fa-feather-alt icon"></i>
+                        <h3>Uy tín và minh bạch</h3>
+                        <p>HOMEGA luôn đặt chữ tín lên hàng đầu, duy trì tính minh bạch trong mọi giao dịch và cam kết sản phẩm. Chúng tôi xây dựng mối quan hệ lâu dài với khách hàng bằng sự trung thực và cam kết rõ ràng về chất lượng.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section contact-cta-section">
+            <div class="container contact-container">
+                <div class="button-group">
+                    <a href="mailto:info@homega.vn" target="_blank" class="btn contact-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1800" class="icon-svg"><path d="M531.087,344.727c0.247,0,0.492,0.033,0.739,0.033h453.558c16.819,0,30.444-13.625,30.444-30.436 c0-16.815-13.625-30.435-30.444-30.435H638.226H531.826c-16.811,0-30.44,13.62-30.44,30.435 C501.386,330.885,514.624,344.331,531.087,344.727z"></path><path d="M531.826,497.389h749.422c16.814,0,30.443-13.629,30.443-30.439c0-16.814-13.629-30.439-30.443-30.439 H531.826c-16.811,0-30.44,13.625-30.44,30.439C501.386,483.76,515.016,497.389,531.826,497.389z"></path><path d="M53
