@@ -77,6 +77,7 @@
             color: var(--text-color-light);
             max-width: 800px;
             margin: 0 auto 40px auto;
+            text-align: center; /* Căn giữa mô tả section */
         }
 
         .text-white {
@@ -132,7 +133,7 @@
         }
 
         .content-column-text p {
-            text-align: left; /* Văn bản cột căn trái */
+            text-align: justify; /* Căn đều văn bản */
             font-size: 1em;
             color: var(--text-color-light);
             margin-bottom: 15px;
@@ -186,6 +187,7 @@
         .why-atech-section .section-description {
             color: rgba(255, 255, 255, 0.9);
             margin-bottom: 60px;
+            text-align: center; /* Căn giữa mô tả section */
         }
 
         .features-list-grid {
@@ -223,7 +225,7 @@
             color: rgba(255, 255, 255, 0.85);
             font-size: 1em;
             margin: 0;
-            text-align: center; /* Căn giữa đoạn văn */
+            text-align: justify; /* Căn đều đoạn văn */
         }
 
         /* Contact CTA Section */
@@ -299,7 +301,7 @@
             margin: 0; /* Bỏ margin */
             vertical-align: middle;
         }
-        
+
         .btn.contact-btn .button-text { /* Chữ nằm dưới nút */
             position: absolute;
             bottom: -35px; /* Đặt chữ ngay dưới nút, điều chỉnh tùy theo kích thước nút và chữ */
@@ -325,15 +327,16 @@
 
         /* Responsive Adjustments */
         @media (max-width: 992px) { /* Breakpoint cho tablet (lớn hơn mobile) */
-            .content-grid {
+            .about-homega-section .content-grid {
                 grid-template-columns: 1fr; /* Một cột trên tablet */
                 gap: 30px;
-                /* Bỏ display: flex và flex-direction ở đây để không xung đột với media query 768px */
             }
 
-            .content-column-text h2,
-            .content-column-text p {
+            .about-homega-section .content-column-text h2 {
                 text-align: center; /* Căn giữa text trên tablet */
+            }
+            .about-homega-section .content-column-text p {
+                text-align: justify; /* Căn đều văn bản trên tablet */
             }
 
             .features-list-grid {
@@ -343,30 +346,32 @@
         }
 
         @media (max-width: 768px) { /* Breakpoint chính cho mobile */
-            .content-grid {
+            .about-homega-section .content-grid {
                 display: flex; /* Chuyển sang Flexbox để kiểm soát thứ tự */
                 flex-direction: column; /* Xếp chồng các phần tử theo cột */
                 align-items: center; /* Căn giữa theo chiều ngang */
                 gap: 30px;
             }
 
-            .column.content-column-image {
-                order: 2; /* Đặt cột ảnh xuống dưới (thứ tự 2) */
+            .about-homega-section .column.content-column-image {
+                order: 1; /* Đặt cột ảnh lên trên (thứ tự 1) */
                 padding: 10px; /* Giảm padding cho ảnh trên mobile */
             }
 
-            .column.content-column-text {
-                order: 1; /* Đặt cột văn bản lên trên (thứ tự 1) */
+            .about-homega-section .column.content-column-text {
+                order: 2; /* Đặt cột văn bản xuống dưới (thứ tự 2) */
                 padding: 10px; /* Giảm padding cho văn bản trên mobile */
             }
 
-            .content-column-image .image-wrapper img {
+            .about-homega-section .content-column-image .image-wrapper img {
                 max-width: 250px; /* Giảm kích thước tối đa của ảnh logo trên mobile */
             }
 
-            .content-column-text h2,
-            .content-column-text p {
-                text-align: center; /* Đảm bảo văn bản căn giữa */
+            .about-homega-section .content-column-text h2 {
+                text-align: center; /* Đảm bảo tiêu đề căn giữa */
+            }
+            .about-homega-section .content-column-text p {
+                text-align: justify; /* Căn đều văn bản trên mobile */
             }
 
             /* Các điều chỉnh khác cho mobile */
@@ -416,7 +421,11 @@
             .section-title {
                 font-size: 1.5em;
             }
-            
+
+            .about-homega-section .content-column-text p {
+                text-align: justify; /* Đảm bảo vẫn căn đều trên mobile nhỏ */
+            }
+
             .btn.contact-btn {
                 padding: 12px 25px;
                 font-size: 0.9em;
