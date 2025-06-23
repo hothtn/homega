@@ -43,32 +43,14 @@
             padding: 20px 0; /* Padding mặc định */
         }
 
-        /* Header */
+        /* Header (đã bỏ logo ở đây) */
         .header {
-            background-color: var(--white); /* Nền trắng như trang gốc */
-            padding: 15px 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Bóng nhẹ */
-            display: flex;
-            justify-content: center; /* Căn giữa nội dung header */
-            align-items: center;
-        }
-
-        .header-container {
-            display: flex;
-            justify-content: center; /* Căn giữa logo */
-            align-items: center;
-            padding: 0; /* Không có padding theo chiều dọc trong container header */
-        }
-
-        .header .logo img {
-            max-width: 130px; /* Kích thước logo */
-            height: auto;
-            display: block;
+            display: none; /* Ẩn hoàn toàn header đầu tiên */
         }
 
         /* Main Content Section Styles */
         .main-content {
-            padding-top: 0; /* Loại bỏ padding trên của main do header đã có */
+            padding-top: 0;
         }
 
         .section {
@@ -119,8 +101,8 @@
         .content-column-image .image-wrapper img {
             max-width: 300px; /* Kích thước ảnh logo trong phần giới thiệu */
             height: auto;
-            border-radius: 8px; /* Bo góc nhẹ */
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Đổ bóng nhẹ nhàng */
+            border-radius: 4px; /* Bo góc nhẹ hơn, viền chìm */
+            /* Bỏ box-shadow để viền chìm vào nền */
             display: block;
             margin: 0 auto; /* Căn giữa ảnh */
         }
@@ -156,9 +138,8 @@
             padding-bottom: 80px; /* Giữ padding như gốc */
         }
 
-        .product-showcase-section .section-title {
-            margin-top: 40px; /* Khoảng cách từ phần trên */
-        }
+        /* Đã loại bỏ .product-showcase-section .section-title ở đây */
+        /* vì bạn muốn bỏ chữ "Sản phẩm nổi bật của ATECH" */
 
         .product-grid {
             display: grid;
@@ -200,8 +181,8 @@
 
         .features-list-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 3 cột trên desktop */
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Điều chỉnh để có 2 cột trên màn hình lớn */
+            gap: 40px; /* Tăng khoảng cách giữa các cột */
             margin-top: 40px;
         }
 
@@ -261,11 +242,14 @@
 
         .contact-heading {
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.8em; /* H4 gốc */
-            font-weight: 600;
+            font-size: 1.4em; /* Nhỏ hơn, thanh lịch hơn */
+            font-weight: 500; /* Giảm độ đậm */
             color: var(--white);
-            margin-bottom: 40px;
+            margin-bottom: 30px; /* Giảm khoảng cách dưới */
             text-align: center;
+            max-width: 600px; /* Giới hạn chiều rộng để chữ không quá dài */
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .button-group {
@@ -277,9 +261,9 @@
         .btn.contact-btn {
             background-color: var(--homega-green); /* Nút liên hệ màu xanh lá từ gốc */
             color: var(--white);
-            padding: 20px 40px; /* Tăng kích thước nút */
+            padding: 15px 35px; /* Giảm padding một chút cho thanh lịch */
             border-radius: 50px; /* Bo tròn hết cỡ */
-            font-size: 1.1em;
+            font-size: 1em; /* Giảm kích thước font */
             font-weight: 600;
             text-transform: uppercase;
             display: inline-flex;
@@ -294,10 +278,10 @@
         }
 
         .btn.contact-btn .icon-svg {
-            width: 20px; /* Kích thước icon SVG */
-            height: 20px;
+            width: 18px; /* Kích thước icon SVG */
+            height: 18px;
             fill: currentColor; /* Icon kế thừa màu chữ */
-            margin-right: 10px;
+            margin-right: 8px; /* Giảm khoảng cách */
             vertical-align: middle;
         }
 
@@ -322,14 +306,20 @@
             }
 
             .content-column-text h2,
-            .content-column-text p,
-            .feature-item h3,
-            .feature-item p {
+            .content-column-text p {
                 text-align: center; /* Căn giữa text trên mobile/tablet */
             }
 
+            .features-list-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Vẫn 2 cột nếu đủ chỗ, co lại nếu không */
+            }
+
+            .feature-item h3,
+            .feature-item p,
             .feature-item .icon {
-                margin: 0 auto 20px auto; /* Căn giữa icon */
+                text-align: center; /* Căn giữa icon và text trên mobile/tablet */
+                margin-left: auto;
+                margin-right: auto;
             }
         }
 
@@ -342,25 +332,21 @@
                 font-size: 1em;
             }
 
-            .product-grid {
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            }
-
             .features-list-grid {
                 grid-template-columns: 1fr; /* Một cột trên mobile */
             }
 
             .btn.contact-btn {
-                padding: 15px 30px;
-                font-size: 1em;
+                padding: 12px 25px;
+                font-size: 0.9em;
+            }
+
+            .contact-heading {
+                font-size: 1.2em;
             }
         }
 
         @media (max-width: 480px) {
-            .header .logo img {
-                max-width: 100px;
-            }
-
             .section {
                 padding: 60px 15px;
             }
@@ -370,26 +356,12 @@
             }
 
             .contact-heading {
-                font-size: 1.5em;
-            }
-
-            .product-grid {
-                gap: 20px;
+                font-size: 1em;
             }
         }
     </style>
 </head>
 <body>
-    <header class="header">
-        <div class="container header-container">
-            <div class="logo">
-                <a href="#">
-                    <img src="https://homega.vn/wp-content/uploads/2024/11/logo-01a-300x287.png" alt="Homega Logo">
-                </a>
-            </div>
-        </div>
-    </header>
-
     <main id="content" class="main-content">
         <section class="section about-homega-section">
             <div class="container content-grid">
@@ -400,7 +372,7 @@
                 </div>
                 <div class="column content-column-text">
                     <h2>Công ty Cổ phần HOMEGA</h2>
-                    <p>là đơn vị chuyên nghiệp trong lĩnh vực phân phối sơn nước, mang đến giải pháp sơn chất lượng cao với nhãn hiệu <strong>ATECH</strong>. Với sứ mệnh góp phần xây dựng và bảo vệ không gian sống của mọi người, HOMEGA cam kết cung cấp các sản phẩm sơn có độ bền bỉ, an toàn, và đa dạng màu sắc.</p>
+                    <p>là đơn vị chuyên nghiệp trong lĩnh vực phân phối sơn nước, mang đến giải pháp sơn chất lượng cao với nhãn hiệu **ATECH**. Với sứ mệnh góp phần xây dựng và bảo vệ không gian sống của mọi người, HOMEGA cam kết cung cấp các sản phẩm sơn có độ bền bỉ, an toàn, và đa dạng màu sắc.</p>
                     <p>Được dẫn dắt bởi đội ngũ giàu kinh nghiệm và tâm huyết, chúng tôi không ngừng đổi mới và nâng cao chất lượng dịch vụ, luôn đặt uy tín và sự hài lòng của khách hàng lên hàng đầu.</p>
                 </div>
             </div>
@@ -408,7 +380,6 @@
 
         <section class="section product-showcase-section">
             <div class="container">
-                <h2 class="section-title">Sản phẩm nổi bật của ATECH</h2>
                 <div class="product-grid">
                     <figure class="product-item">
                         <img src="https://homega.vn/wp-content/uploads/2024/11/atech1.png" alt="ATECH Product 1">
@@ -428,14 +399,14 @@
 
         <section class="section why-atech-section">
             <div class="container">
-                <h2 class="section-title text-white">Với <strong>ATECH</strong></h2>
+                <h2 class="section-title text-white">Với **ATECH**</h2>
                 <p class="section-description text-white">Chúng tôi tự tin mang đến những giải pháp tối ưu cho mọi công trình, từ ngôi nhà nhỏ đến dự án lớn. Hãy cùng HOMEGA tạo nên những không gian sống ấn tượng, bền vững với thời gian.</p>
 
                 <div class="features-list-grid">
                     <div class="feature-item">
                         <i class="fas fa-cube icon"></i>
                         <h3>Chất lượng sản phẩm</h3>
-                        <p><strong>ATECH</strong> đáp ứng các tiêu chuẩn chất lượng cao, đảm bảo độ bền màu, chống thấm, và khả năng bảo vệ tối ưu. Chúng tôi cam kết mang đến những sản phẩm đáng tin cậy, giúp duy trì vẻ đẹp bền lâu cho mọi công trình.</p>
+                        <p>**ATECH** đáp ứng các tiêu chuẩn chất lượng cao, đảm bảo độ bền màu, chống thấm, và khả năng bảo vệ tối ưu. Chúng tôi cam kết mang đến những sản phẩm đáng tin cậy, giúp duy trì vẻ đẹp bền lâu cho mọi công trình.</p>
                     </div>
                     <div class="feature-item">
                         <i class="fab fa-connectdevelop icon"></i>
