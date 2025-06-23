@@ -104,12 +104,19 @@
             padding: 20px; /* Padding từ gốc */
         }
 
+        .content-column-image .image-wrapper {
+            display: flex;
+            justify-content: center; /* Đảm bảo căn giữa ảnh trong cột */
+            align-items: center;
+            height: 100%; /* Đảm bảo container ảnh chiếm đủ chiều cao */
+        }
+
         .content-column-image .image-wrapper img {
             max-width: 300px; /* Kích thước ảnh logo trong phần giới thiệu */
             height: auto;
             border-radius: 4px; /* Bo góc nhẹ hơn, viền chìm */
             display: block;
-            margin: 0 auto; /* Căn giữa ảnh */
+            margin: 0; /* Đảm bảo không có margin tự động */
         }
 
         .content-column-text {
@@ -323,6 +330,10 @@
                 gap: 30px;
             }
 
+            .content-column-image .image-wrapper {
+                justify-content: center; /* Căn giữa ảnh trong cột hình ảnh */
+            }
+
             .content-column-text h2,
             .content-column-text p {
                 text-align: center; /* Căn giữa text trên mobile/tablet */
@@ -332,8 +343,6 @@
                 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Vẫn 2 cột nếu đủ chỗ, co lại nếu không */
                 gap: 30px; /* Giảm khoảng cách cho tablet */
             }
-
-            /* .feature-item h3, .feature-item p, .feature-item .icon đã được căn giữa ở trên */
         }
 
         @media (max-width: 768px) {
